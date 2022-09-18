@@ -1,0 +1,51 @@
+$color-black:black;
+$color-gray: #c3cfe2;
+$color-white:white;
+$color-purpleblue: #686de0;
+
+$font-lato:'Lato', sans-serif;
+
+
+$ten-padding:0.625rem;
+$twenty-padding:1.25rem;
+$twentyfour-padding:1.5rem;
+
+$font-ten:0.625rem;
+$font-twelve:0.75rem;
+$font-fourteen:0.875rem;
+$font-sixteen:1rem;
+$font-eightteen:1.125rem;
+$font-twenty:1.25rem;
+$font-twentytwo:1.375rem;
+$font-twentyfour:1.5rem;
+
+@mixin flex-center {
+display: flex;
+flex-flow: column wrap;
+justify-content: center;
+align-items: center;
+    
+}
+@mixin actor{
+position: relative;
+border:transparent;
+border-radius: 10%;
+background-color: rgb(131, 129, 129);
+}
+@mixin socials{
+display: flex;
+align-items: center;
+transition: transform 0.3s ease-in-out;
+}
+
+@mixin icons{
+color: #fff;
+padding: 15px;
+text-align: center;
+width: 60px;
+}
+
+@mixin smlink{
+color: #fff;
+padding: 0 10px;
+}

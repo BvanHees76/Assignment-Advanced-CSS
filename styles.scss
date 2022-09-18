@@ -1,0 +1,329 @@
+@import "./constants.scss";
+@font-face {
+    font-family: 'Lato', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+}
+
+body{
+background-color: $color-gray;
+}
+
+main{
+padding: $twenty-padding;
+}
+main h2, main h3{
+text-align: center;
+margin-bottom: 0;
+}
+
+
+
+.testimonial{
+box-shadow: 0 10px 20px 0 rgb(96, 95, 95);
+background-color: $color-white;
+border-top: solid 1px $color-white;
+border-bottom: transparent;
+border-left: transparent;
+border-right: transparent;
+border-radius: 1rem;
+    
+    &__text p{
+    padding: $ten-padding $twenty-padding 3rem;
+    font-size: $font-eightteen;
+    font-family:$font-lato;
+    font-weight: 900;
+    line-height: 2rem;
+    }
+
+    &__portrait-name{
+    background-color: $color-purpleblue;
+    @include flex-center();
+    position: relative;
+    border: transparent;
+    border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem;
+    }
+   
+    &__portrait-name img{
+    border:solid $color-white 5px;
+    border-radius: 50%;
+    position: absolute;
+    top:-35%;
+    }
+    .webaddress{
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: $font-sixteen;
+    font-family:$font-lato;
+    font-weight: 800;
+    color:#9fb4cf;    
+    }
+    .name{
+    padding:0;
+    margin-top: 80px;
+    margin-bottom:10px;
+    font-size: $font-twentyfour;
+    font-family:$font-lato;
+    font-weight: 800;
+    color:$color-white;
+    }
+}
+
+.grid-container{
+right:10px;
+left: 10px;
+display: grid;
+grid-template-columns: repeat(3, 100px);
+grid-template-rows: repeat(30, 100px);
+grid-row-gap: 10px;
+grid-template-areas: 
+" a a a "
+" a a a "
+" a a a "
+" b b b "
+" b b b "
+" b b b "
+" c c c "
+" c c c "
+" c c c "
+" d d d "
+" d d d "
+" d d d "
+" e e e "
+" e e e "
+" e e e "
+" f f f "
+" f f f "
+" f f f "
+" g g g "
+" g g g "
+" g g g "
+" h h h "
+" h h h "
+" h h h "
+" i i i "
+" i i i "
+" i i i "
+" j j j "
+" j j j "
+" j j j "
+;
+    & a{
+    text-decoration: none;
+    border: solid black 2px;
+    border-radius: 10%;
+    background-color: blueviolet;
+    padding:1rem;
+    color: white;    
+    }
+    &__ade{
+    position: relative;
+    grid-area:a;
+    border:transparent;
+    border-radius: 10%;
+    background-color: rgb(131, 129, 129);    
+    }
+    &__aj{
+    @include actor;
+    grid-area:b;     
+    }
+    &__chris{
+    @include actor;
+    grid-area:c;   
+    }
+    &__tony{
+    @include actor;
+    grid-area:d;       
+    }
+    &__jan{
+    @include actor;
+    grid-area:e;       
+    }
+    &__june{
+    @include actor;
+    grid-area:f;       
+    }
+    &__mead{
+    @include actor;
+    grid-area:g;       
+    }
+    &__melf{
+    @include actor;
+    grid-area:h;       
+    }
+    &__silvio{
+    @include actor;
+    grid-area:i;       
+    }
+    &__paulie{
+    @include actor;
+    grid-area:j;       
+    }
+
+    &__ade img, &__aj img, &__chris img, &__tony img, &__jan img, &__june img, &__mead img, &__melf img, &__silvio img, &__paulie img{
+    border:transparent;
+    border-radius: 10%;
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0%; 
+    transition:opacity .4s .1s ease-in;
+        &:hover{
+        opacity:0;
+        }
+    }
+    &__ade a, &__aj a, &__chris a, &__tony a, &__jan a, &__june a, &__mead a, &__melf a, &__silvio a, &__paulie a{
+    position: absolute;
+    top:42%;
+    left:26%;
+    }   
+} 
+
+
+@media screen and (min-width: 768px) {
+    .grid-container{
+        margin-top:1.25rem;
+        display: grid;
+        grid-template-columns: repeat(6, 100px);
+        grid-template-rows: repeat(15, 100px);
+        grid-row-gap: 1.25rem;
+        grid-column-gap:1.25rem;
+        grid-template-areas: 
+        " a a a b b b "
+        " a a a b b b "
+        " a a a b b b "        
+        " c c c d d d "
+        " c c c d d d "
+        " c c c d d d "
+        " e e e f f f "
+        " e e e f f f "
+        " e e e f f f "
+        " g g g h h h "
+        " g g g h h h "
+        " g g g h h h "
+        " i i i j j j "
+        " i i i j j j "
+        " i i i j j j "
+        ;
+}   
+} 
+
+@media screen and (min-width: 1024px) {
+    .grid-container{
+        margin-top:1.25rem;
+        display: grid;
+        grid-template-columns: repeat(9, 100px);
+        grid-template-rows: repeat(12, 100px);
+        grid-row-gap: 1.25rem;
+        grid-column-gap:1.25rem;
+        grid-template-areas: 
+        " a a a b b b c c c "
+        " a a a b b b c c c "
+        " a a a b b b c c c "        
+        " d d d e e e f f f "
+        " d d d e e e f f f "
+        " d d d e e e f f f " 
+        " g g g h h h i i i "
+        " g g g h h h i i i "
+        " g g g h h h i i i "
+        " j j j . . . . . . "
+        " j j j . . . . . . "
+        " j j j . . . . . . "
+        ;
+}   
+}  
+
+ .social-media{
+position: fixed;
+top: 50%;
+right:0%;
+left: calc(100% - 60px);
+list-style-type: none;
+padding: 0;
+list-style-type: none;
+min-width: 250px;
+
+&__blog{
+@include socials;
+background-color: #e17b77;
+    &:hover{
+    transform: translateX(calc(-100% + 60px));
+    }
+    & i{
+    @include icons;
+    }
+    & a{
+    @include smlink;
+    }
+}
+
+
+&__twitter{
+@include socials;
+background-color: #00aced;
+    &:hover{
+    transform: translateX(calc(-100% + 60px));
+    }
+    & i{
+    @include icons;
+    }
+    & a{
+    @include smlink;
+    }
+}
+
+&__linkedin{
+@include socials;
+background-color: #007bb6;
+    &:hover{
+    transform: translateX(calc(-100% + 60px));
+    }
+    & i{
+    @include icons;
+    }
+    & a{
+    @include smlink;
+    }
+}
+
+&__facebook{
+@include socials;
+background-color: #3b5998; 
+    &:hover{
+    transform: translateX(calc(-100% + 60px));
+    }
+    & i{
+    @include icons;
+    }
+    & a{
+    @include smlink;
+    }
+
+}
+
+&__github{
+@include socials;
+background-color: #333;
+    &:hover{
+    transform: translateX(calc(-100% + 60px));
+    }
+    & i{
+    @include icons;
+    }
+    & a{
+    @include smlink;
+    }
+}
+
+& a{
+text-decoration: none;
+font-family: $font-lato;
+font-size: 1;
+color:white;
+
+&:hover{
+color: black;
+}
+}
+}
+
